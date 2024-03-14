@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Rog</title>
+<style>
+    body {
+        background-color: #333; /* Set background color to gray */
+        color: #fff; /* Set text color to white */
+        font-family: Arial, sans-serif; /* Set font family */
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #fff;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #666; /* Set header background color */
+    }
+    tr:nth-child(even) {
+        background-color: #444; /* Set even row background color */
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #555;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h1>Black Rog</h1>
+
+<h2>Data Table</h2>
+
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+            <th>Column 4</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Table body will be populated dynamically with JavaScript -->
+    </tbody>
+</table>
+
+<h2>Add Data</h2>
+
+<input type="text" id="data1" placeholder="Enter data for column 1">
+<input type="text" id="data2" placeholder="Enter data for column 2">
+<input type="text" id="data3" placeholder="Enter data for column 3">
+<input type="text" id="data4" placeholder="Enter data for column 4">
+<button onclick="addData()">Add Data</button>
+
+<script>
+function addData() {
+    // Get input values
+    var data1 = document.getElementById("data1").value;
+    var data2 = document.getElementById("data2").value;
+    var data3 = document.getElementById("data3").value;
+    var data4 = document.getElementById("data4").value;
+
+    // Get table body
+    var tbody = document.querySelector("#dataTable tbody");
+
+    // Create new row
+    var row = document.createElement("tr");
+
+    // Create and append cells with input values
+    var cell1 = document.createElement("td");
+    cell1.textContent = data1;
+    row.appendChild(cell1);
+
+    var cell2 = document.createElement("td");
+    cell2.textContent = data2;
+    row.appendChild(cell2);
+
+    var cell3 = document.createElement("td");
+    cell3.textContent = data3;
+    row.appendChild(cell3);
+ 
+    var cell4 = document.createElement("td");
+    cell3.textContent = data4;
+    row.appendChild(cell4);
+ 
+ 
+
+    // Append new row to table body
+    tbody.appendChild(row);
+}
+</script>
+
+</body>
+</html>
